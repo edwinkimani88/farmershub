@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360" width="100%" height="100%" fill="none">
+  <!-- Circular Emblem Container -->
+  <g transform="translate(40, 10)">
+    <!-- Top Arc Frame -->
+    <path d="M 40 180 A 120 120 0 1 1 280 180" stroke="#04361A" stroke-width="8" stroke-linecap="round" fill="none" />
+
+    <!-- Golden Sun on Right Horizon -->
+    <circle cx="210" cy="120" r="34" fill="#FFB70F" />
+
+    <!-- Rolling Green Contour Fields (Pathways) -->
+    <!-- Lower Deep Forest Green Contour -->
+    <path d="M 80 195 C 130 190, 180 155, 238 135 C 220 175, 175 198, 120 200 Z" fill="#04361A" />
+    
+    <!-- Sweeping Leaf Green Field Swath -->
+    <path d="M 122 195 C 160 178, 205 145, 252 136 C 240 168, 200 190, 150 196 Z" fill="#419C09" />
+    
+    <!-- Base Lower Arch Mound -->
+    <path d="M 96 195 C 145 192, 195 168, 235 148 C 225 185, 180 200, 130 202 Z" fill="#04361A" />
+
+    <!-- Animals Silhouette Composition -->
+    <!-- Large Cow Silhouette in Deep Forest Green #04361A -->
+    <path d="M 125 72 
+             C 130 65, 140 60, 148 64 
+             C 152 66, 158 64, 162 58 
+             C 165 54, 172 58, 170 66 
+             C 176 68, 182 72, 180 78 
+             C 177 84, 170 86, 168 90 
+             C 176 96, 188 104, 192 115 
+             C 196 126, 190 134, 178 136 
+             C 170 138, 164 135, 160 130
+             C 155 138, 150 148, 144 158
+             C 138 140, 134 120, 128 105
+             C 122 92, 120 80, 125 72 Z" 
+          fill="#04361A" />
+    
+    <!-- White / Negative Space Sheep/Goat Silhouette in Center -->
+    <path d="M 132 105
+             C 135 98, 142 94, 145 98
+             C 147 101, 149 108, 146 116
+             C 144 122, 140 128, 142 136
+             C 143 142, 141 150, 138 156
+             C 132 152, 128 142, 125 132
+             C 124 122, 128 112, 132 105 Z" 
+          fill="#FFFFFF" />
+
+    <!-- Chicken / Rooster Silhouette in Deep Forest Green #04361A on Bottom Left -->
+    <path d="M 102 150
+             C 104 144, 108 140, 114 140
+             C 116 138, 118 134, 120 136
+             C 122 138, 121 144, 124 146
+             C 126 148, 128 152, 126 156
+             C 124 160, 120 166, 114 172
+             C 106 170, 98 162, 102 150 Z" 
+          fill="#04361A" />
+  </g>
+
+  <!-- Typography: FARMERS HUB -->
+  <!-- FARMERS in Bold Deep Forest Green -->
+  <text x="200" y="278" 
+        text-anchor="middle" 
+        fill="#04361A" 
+        font-family="system-ui, -apple-system, sans-serif" 
+        font-weight="900" 
+        font-size="44" 
+        letter-spacing="2">FARMERS</text>
+
+  <!-- Side Accent Lines & HUB in Vibrant Leaf Green -->
+  <line x1="70" y1="312" x2="140" y2="312" stroke="#419C09" stroke-width="4" stroke-linecap="round" />
+  <text x="200" y="322" 
+        text-anchor="middle" 
+        fill="#419C09" 
+        font-family="system-ui, -apple-system, sans-serif" 
+        font-weight="800" 
+        font-size="30" 
+        letter-spacing="14">HUB</text>
+  <line x1="260" y1="312" x2="330" y2="312" stroke="#419C09" stroke-width="4" stroke-linecap="round" />
+</svg>

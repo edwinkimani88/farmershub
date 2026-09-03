@@ -1,0 +1,6 @@
+{
+  "name": "Farmers Hub",
+  "description": "Kenya's premier digital home and community platform for everyday farmers. Featuring real-time farmer discussions in English and Swahili, official veterinary visit reports, Shamba Companion AI, regional farm storytelling, and practical agricultural advisory.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

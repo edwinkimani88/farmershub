@@ -1,0 +1,613 @@
+@import "tailwindcss";
+
+/* ============================================================
+   FARMERS HUB — DESIGN SYSTEM
+   Colors: Deep Forest #04361A | Leaf #419C09 | Gold #FFB70F
+   Typography: Outfit (headings) | Plus Jakarta Sans (body)
+   ============================================================ */
+
+@layer base {
+  :root {
+    /* Brand Colors */
+    --fh-forest: #04361A;
+    --fh-forest-deep: #021A0D;
+    --fh-forest-mid: #0B5C2C;
+    --fh-leaf: #419C09;
+    --fh-leaf-light: #5AC40B;
+    --fh-gold: #FFB70F;
+    --fh-gold-deep: #E6A200;
+    --fh-earth: #C4A96B;
+    --fh-earth-light: #DBC896;
+
+    /* Background System */
+    --fh-bg-warm: #F5F0E8;
+    --fh-bg-cream: #FAF7F0;
+    --fh-bg-white: #FFFFFF;
+    --fh-bg-dark: #021A0D;
+    --fh-bg-surface: #EDE8DE;
+
+    /* Typography */
+    --fh-text-primary: #04361A;
+    --fh-text-secondary: #3D5A44;
+    --fh-text-muted: #7A9480;
+    --fh-text-light: rgba(255,255,255,0.85);
+
+    /* Spacing tokens */
+    --fh-section-padding: 5rem 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--fh-bg-warm);
+    color: var(--fh-text-primary);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+
+.font-outfit { font-family: 'Outfit', sans-serif; }
+.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
+.font-script { font-family: 'Playfair Display', serif; }
+.font-serif-accent { font-family: 'Playfair Display', serif; }
+
+/* ============================================================
+   GSAP ANIMATION READY CLASSES
+   ============================================================ */
+
+.gsap-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.gsap-reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.gsap-reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.gsap-reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.gsap-clip-reveal {
+  clip-path: inset(0 100% 0 0);
+}
+
+.gsap-stagger-child {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Text split word containers */
+.split-word {
+  display: inline-block;
+  overflow: hidden;
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+
+.hero-arch-frame {
+  border-radius: 200px 200px 40px 40px;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .hero-arch-frame {
+    border-radius: 120px 120px 24px 24px;
+  }
+}
+
+/* Hero overlay gradient */
+.hero-image-overlay {
+  background: linear-gradient(
+    to top,
+    #04361A 0%,
+    rgba(4, 54, 26, 0.5) 40%,
+    transparent 100%
+  );
+}
+
+/* ============================================================
+   MAGNETIC BUTTON EFFECT
+   ============================================================ */
+
+.magnetic-btn {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  position: relative;
+}
+
+.magnetic-btn:hover {
+  transform: scale(1.03);
+}
+
+/* ============================================================
+   SCROLLBAR STYLING
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--fh-bg-warm);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--fh-forest);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fh-leaf);
+}
+
+/* ============================================================
+   CARD SYSTEM
+   ============================================================ */
+
+.fh-card {
+  background: white;
+  border-radius: 24px;
+  border: 1px solid rgba(4, 54, 26, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+}
+
+.fh-card:hover {
+  box-shadow: 0 20px 60px rgba(4, 54, 26, 0.12);
+  transform: translateY(-4px);
+}
+
+.fh-card-dark {
+  background: var(--fh-forest);
+  border-radius: 24px;
+  border: 1px solid rgba(65, 156, 9, 0.2);
+}
+
+/* ============================================================
+   SECTION BACKGROUNDS
+   ============================================================ */
+
+.section-forest {
+  background: var(--fh-forest);
+  color: white;
+}
+
+.section-warm {
+  background: var(--fh-bg-warm);
+}
+
+.section-cream {
+  background: var(--fh-bg-cream);
+}
+
+.section-dark {
+  background: var(--fh-forest-deep);
+  color: white;
+}
+
+/* ============================================================
+   GRAIN TEXTURE OVERLAY
+   ============================================================ */
+
+.grain-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+/* ============================================================
+   COUNTER ANIMATION
+   ============================================================ */
+
+.counter-value {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+
+.nav-item-underline {
+  position: relative;
+}
+
+.nav-item-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--fh-gold);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-item-underline:hover::after,
+.nav-item-underline.active::after {
+  width: 100%;
+}
+
+/* Mega menu */
+.mega-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 24px 80px rgba(4, 54, 26, 0.2);
+  border: 1px solid rgba(4, 54, 26, 0.08);
+  min-width: 480px;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-10px);
+  visibility: hidden;
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.mega-menu.active,
+.nav-trigger:hover .mega-menu,
+.nav-trigger:focus-within .mega-menu {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  visibility: visible;
+  pointer-events: all;
+}
+
+/* ============================================================
+   HORIZONTAL SCROLL TRACK
+   ============================================================ */
+
+.horizontal-scroll-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 1rem;
+}
+
+.horizontal-scroll-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================================================
+   BADGE SYSTEM
+   ============================================================ */
+
+.badge-gold {
+  background: var(--fh-gold);
+  color: var(--fh-forest);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 99px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-forest {
+  background: var(--fh-forest);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+.badge-leaf {
+  background: rgba(65, 156, 9, 0.12);
+  color: var(--fh-leaf);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+/* ============================================================
+   BUTTON SYSTEM
+   ============================================================ */
+
+.btn-primary {
+  background: var(--fh-gold);
+  color: var(--fh-forest);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  padding: 14px 28px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(255, 183, 15, 0.3);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: var(--fh-forest);
+  color: white;
+  box-shadow: 0 8px 30px rgba(4, 54, 26, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--fh-forest);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 13px 26px;
+  border-radius: 14px;
+  border: 2px solid var(--fh-forest);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: var(--fh-forest);
+  color: white;
+}
+
+.btn-forest {
+  background: var(--fh-forest);
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  padding: 14px 28px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-forest:hover {
+  background: var(--fh-leaf);
+  box-shadow: 0 8px 30px rgba(65, 156, 9, 0.3);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   TICKER / MARQUEE
+   ============================================================ */
+
+.ticker-track {
+  display: flex;
+  gap: 3rem;
+  animation: tickerScroll 30s linear infinite;
+  white-space: nowrap;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   FLOATING ELEMENTS
+   ============================================================ */
+
+.float-badge {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(4, 54, 26, 0.12);
+  border: 1px solid rgba(4, 54, 26, 0.08);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+}
+
+/* ============================================================
+   REGIONAL STORYTELLING PIN SECTION
+   ============================================================ */
+
+.region-pin-section {
+  position: relative;
+  min-height: 600px;
+}
+
+/* ============================================================
+   COMMUNITY SECTION
+   ============================================================ */
+
+.post-card {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid rgba(4, 54, 26, 0.08);
+  padding: 20px;
+  transition: all 0.25s ease;
+}
+
+.post-card:hover {
+  box-shadow: 0 12px 40px rgba(4, 54, 26, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   IMAGE MASK REVEAL
+   ============================================================ */
+
+.img-mask-container {
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.img-mask-container img {
+  transform: scale(1.1);
+  transition: transform 0.8s ease;
+}
+
+.img-mask-container:hover img {
+  transform: scale(1);
+}
+
+/* ============================================================
+   GSAP SPLIT TEXT CONTAINER
+   ============================================================ */
+
+.headline-split .word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.headline-split .char {
+  display: inline-block;
+}
+
+/* ============================================================
+   ANIMAL CATEGORY CARDS
+   ============================================================ */
+
+.animal-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  text-align: center;
+  border: 1px solid rgba(4, 54, 26, 0.08);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.animal-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--fh-forest);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.animal-card:hover::before {
+  transform: scaleY(1);
+}
+
+.animal-card:hover {
+  color: white;
+  border-color: var(--fh-forest);
+}
+
+.animal-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   PRODUCT CARDS
+   ============================================================ */
+
+.product-card {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid rgba(4, 54, 26, 0.06);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.product-card:hover {
+  box-shadow: 0 16px 50px rgba(4, 54, 26, 0.12);
+  transform: translateY(-3px);
+}
+
+.product-card .product-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+/* ============================================================
+   PAGE TRANSITION CURTAIN
+   ============================================================ */
+
+.page-transition-curtain {
+  position: fixed;
+  inset: 0;
+  background: var(--fh-forest);
+  z-index: 9000;
+  pointer-events: none;
+  clip-path: inset(100% 0 0 0);
+}
+
+/* ============================================================
+   RESPONSIVE UTILITIES
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 641px) {
+  .show-mobile-only {
+    display: none !important;
+  }
+}
