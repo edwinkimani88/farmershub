@@ -22,25 +22,24 @@ export const FarmersHubLogo: React.FC<FarmersHubLogoProps> = ({
   theme = 'dark',
   size = 'md',
 }) => {
-  const isDark = theme === 'dark';
   const heightPx = heightMaps[size] || 44;
 
-  // Use official transparent PNG or official full logo PNG
-  const logoSrc = variant === 'full' ? logoFull : logoTransparent;
+  // On dark header backgrounds: use transparent PNG with NO filter — the green artwork
+  // shows clearly against the dark green. On light backgrounds: use the full PNG.
+  const logoSrc = theme === 'light' ? logoFull : logoTransparent;
 
-  // On dark backgrounds (like header #04361A), invert logo if needed or use high contrast
   const imgStyle: React.CSSProperties = {
     height: `${heightPx}px`,
     width: 'auto',
     maxHeight: `${heightPx}px`,
     objectFit: 'contain',
-    filter: isDark ? 'brightness(0) invert(1)' : undefined,
+    // No CSS filter — show the official colours as designed
   };
 
   return (
     <img
       src={logoSrc}
-      alt="Farmers Hub Logo"
+      alt="Farmers Hub"
       style={imgStyle}
       className={`shrink-0 block ${className}`}
     />
