@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import logoTransparent from '../assets/Hub Logo transparent.png';
 
 interface PageLoaderProps {
   onComplete: () => void;
@@ -62,10 +61,10 @@ export const PageLoader: React.FC<PageLoaderProps> = ({ onComplete }) => {
         background: 'radial-gradient(ellipse at center, rgba(65,156,9,0.15) 0%, transparent 60%)',
       }} />
 
-      {/* Logo — official transparent PNG, no CSS filter */}
+      {/* Logo — official transparent PNG from /public/assets/ */}
       <img
         ref={logoRef}
-        src={logoTransparent}
+        src="./assets/logo-transparent.png"
         alt="Farmers Hub"
         style={{ width: 130, height: 130, objectFit: 'contain' }}
       />
