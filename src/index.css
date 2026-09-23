@@ -105,6 +105,47 @@
 }
 
 /* ============================================================
+   HEADER / NAV
+   ============================================================ */
+
+/* Animated underline on nav links */
+.nav-item-underline {
+  position: relative;
+}
+.nav-item-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #FFB70F;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: width 0.25s ease;
+}
+.nav-item-underline:hover::after {
+  width: calc(100% - 24px);
+}
+
+/* Magnetic CTA button */
+.magnetic-btn {
+  position: relative;
+  overflow: hidden;
+}
+.magnetic-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+.magnetic-btn:hover::before {
+  transform: translateX(0);
+}
+
+/* ============================================================
    HERO SECTION
    ============================================================ */
 

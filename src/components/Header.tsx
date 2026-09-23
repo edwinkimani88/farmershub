@@ -173,7 +173,7 @@ export const Header: React.FC<HeaderProps> = ({
                     </Link>
                   ))}
                 </div>
-                <div className="mt-2 pt-2 border-t border-[#04361A]/08">
+                <div className="mt-2 pt-2 border-t border-[#04361A]/10">
                   <Link to="/livestock" onClick={() => setLivestockOpen(false)} className="flex items-center gap-1.5 text-xs font-bold text-[#419C09] hover:text-[#04361A] transition-colors px-3">
                     View all livestock guides <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -203,8 +203,8 @@ export const Header: React.FC<HeaderProps> = ({
                       onClick={() => setShopOpen(false)}
                       className="flex items-center gap-3 p-3 rounded-xl hover:bg-[#F5F0E8] transition-colors group"
                     >
-                      <div className="w-9 h-9 rounded-xl bg-[#04361A]/08 flex items-center justify-center group-hover:bg-[#04361A] transition-colors">
-                        <l.icon className="w-4.5 h-4.5 text-[#04361A] group-hover:text-white transition-colors" />
+                      <div className="w-9 h-9 rounded-xl bg-[#04361A]/10 flex items-center justify-center group-hover:bg-[#04361A] transition-colors">
+                        <l.icon className="w-[18px] h-[18px] text-[#04361A] group-hover:text-white transition-colors" />
                       </div>
                       <div>
                         <div className="font-bold text-sm text-[#04361A]">{l.label}</div>
@@ -213,7 +213,7 @@ export const Header: React.FC<HeaderProps> = ({
                     </Link>
                   ))}
                 </div>
-                <div className="mt-2 pt-2 border-t border-[#04361A]/08">
+                <div className="mt-2 pt-2 border-t border-[#04361A]/10">
                   <Link to="/shop" onClick={() => setShopOpen(false)} className="flex items-center gap-1.5 text-xs font-bold text-[#419C09] hover:text-[#04361A] transition-colors px-3">
                     Browse all products <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -257,7 +257,7 @@ export const Header: React.FC<HeaderProps> = ({
               className="relative p-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white transition-all flex items-center gap-2"
               title="View Shamba Basket"
             >
-              <ShoppingBag className="w-4.5 h-4.5" />
+              <ShoppingBag className="w-[18px] h-[18px]" />
               {totalItems > 0 && (
                 <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#FFB70F] text-[#04361A] font-extrabold text-[11px] flex items-center justify-center">
                   {totalItems}
@@ -293,7 +293,8 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden overflow-hidden transition-all duration-300 ${mobileOpen ? 'max-h-screen' : 'max-h-0'}`}>
+      <div className={`lg:hidden transition-[grid-template-rows] duration-300 ease-in-out grid ${mobileOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+        <div className="overflow-hidden">
         <div className="bg-[#021A0D] border-t border-white/10 px-4 py-5 space-y-2">
           {/* Quick actions */}
           <div className="grid grid-cols-2 gap-2 mb-4">
@@ -347,6 +348,7 @@ export const Header: React.FC<HeaderProps> = ({
               </Link>
             )}
           </div>
+        </div>
         </div>
       </div>
     </header>
